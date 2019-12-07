@@ -1,6 +1,9 @@
 * {
     box-sizing: border-box;
 }
+html {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 body {
     margin: 0px;
 }
@@ -35,7 +38,7 @@ header {
     width: 40vw;
     font-size: 16px;
     border-radius: 20px;
-    background-color: rgb(230, 77, 77);
+    background-color: rgb(230, 118, 118);
     border: 2px solid rgb(192, 21, 21);
     color: white;
     padding: 10px;
@@ -49,7 +52,7 @@ header {
     height: 30px;
     width: 30px;
     border-radius: 20px;
-    background-color: rgb(230, 77, 77);
+    background-color: rgb(230, 118, 118);
     border: 2px solid rgb(192, 21, 21);
 }
 .searchButton:hover {
@@ -68,6 +71,17 @@ header {
     background-image: url(../../images/AddNewJob-blue.png);
 }
 
+/* MAIN CONTAINER STYLING */
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+#content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+  }
+
 /* FOOTER STYLING */
 
 footer {
@@ -78,4 +92,84 @@ footer {
     justify-content: center;
     align-items: center;
     display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
+
+/* NEW JOB CONTAINER STYLING */
+
+.job-form {
+    padding: 20px;
+}
+.addInput {
+    border: 2px solid rgb(192, 21, 21);
+    font-size: 16px;
+    border-radius: 20px;
+    height: 30px;
+    padding: 10px;
+    width: 90%;
+}
+.addInput:hover {
+    box-shadow: 2px 2px 10px black;
+}
+.job-input-cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: left;
+    align-items: center;
+}
+.cat-input-cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: left;
+    align-items: center;
+}
+.date-input-cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: left;
+    align-items: center;
+}
+
+/* ADD BUTTON & ANIMATION */
+
+.cta {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    border: 2px solid rgb(192, 21, 21);
+    background-color: rgb(230, 118, 118);
+    color: #fff;
+    transition: width 0.4s;
+    position: absolute;
+    margin: 1px;
+  }
+  .cta:hover {
+    width: 100px;
+    transition: width 0.4s;
+    cursor: pointer;
+  }
+  
+  .cta i {
+    opacity: 1;
+    transition: opacity 0.3s
+  }
+  
+  .cta:hover i {
+    opacity: 0;
+    transition: opacity 0.3s
+  }
+  
+  .cta .button-text {
+    opacity: 0;
+    transition: opacity .3s;
+    position: absolute;
+    width: 100%;
+    left: 0;
+   }
+  
+  .cta:hover .button-text {
+    opacity: 1;
+    transition: opacity 0.3s
+  }
