@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0px;
+}
+
+/* HEADER STYLING */
+
+header {
+    height: 70px;
+    background-color: rgb(238, 48, 48);
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    padding: 10px;
+}
+#app-logo {
+    background-image: url(../../images/shopping-list-white.png);
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+    box-shadow: 2px black;
+}
+#app-logo:hover {
+    background-image: url(../../images/shopping-list-blue.png);
+}
+.searcbar {
+    display: flex;
+    align-items: center;
+}
+#search-input {
+    height: 30px;
+    width: 40vw;
+    font-size: 16px;
+    border-radius: 20px;
+    background-color: rgb(230, 77, 77);
+    border: 2px solid rgb(192, 21, 21);
+    color: white;
+    padding: 10px;
+}
+#search-input:hover, #search-input:active {
+    color: #0bdeff;
+    border-color: #0bdeff;
+
+}
+.searchButton {
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    background-color: rgb(230, 77, 77);
+    border: 2px solid rgb(192, 21, 21);
+}
+.searchButton:hover {
+    cursor: pointer;
+    color: #0bdeff;
+    border-color: #0bdeff;
+}
+.new-job {
+    background-image: url(../../images/AddNewJob-white.png);
+    background-size: contain;
+    background-position: center;
+    height: 30px;
+    width: 30px;
+}
+.new-job:hover {
+    background-image: url(../../images/AddNewJob-blue.png);
+}
+
+/* FOOTER STYLING */
+
+footer {
+    background-color: rgb(238, 48, 48);
+    padding: 10px;
+    height: 50px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
