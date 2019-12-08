@@ -79,7 +79,8 @@ header {
   }
   
 #content-wrap {
-    padding-bottom: 2.5rem;    /* Footer height */
+    /* padding-bottom: 100px; */
+    padding: 20px 20px 50px 20px;
   }
 
 /* FOOTER STYLING */
@@ -99,9 +100,6 @@ footer {
 
 /* NEW JOB CONTAINER STYLING */
 
-.job-form {
-    padding: 20px;
-}
 .addInput {
     border: 2px solid rgb(192, 21, 21);
     font-size: 16px;
@@ -124,6 +122,14 @@ footer {
     grid-template-columns: 1fr 1fr;
     justify-content: left;
     align-items: center;
+}
+.cat-select {
+    border: 2px solid rgb(192, 21, 21);
+    font-size: 16px;
+    border-radius: 20px;
+    height: 30px;
+    padding: 10px;
+    width: 90%;
 }
 .date-input-cont {
     display: grid;
@@ -173,3 +179,15 @@ footer {
     opacity: 1;
     transition: opacity 0.3s
   }
+
+  /* ACTIVE JOB CONTAINER */
+
+.row-column-names {
+    display: flex;
+    justify-content: space-around;
+}
+
+.row-job {
+    display: flex;
+    justify-content: space-around;
+}
