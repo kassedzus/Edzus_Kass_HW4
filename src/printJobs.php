@@ -30,13 +30,26 @@ foreach ($allRows as $row) {
     }
     echo "<div class='row-job'>";
     foreach ($row as $key => $value) {
-        echo "<span class='value-cell'>$value </span>";
+        echo "<div class='value-cell'>$value </div>";
 
     }
-    echo "<form action='../src/deleteJob.php' method='post'>";
-    echo "<button name='delete' value='" . $row['id'] . "'>Delete</button>";
-    echo "</form>";
+    echo "<div class='dropdown'>";
+        echo "<button class='dropbtn'><i class='fa fa-cog' aria-hidden='true'></i></button>";
+            echo "<div class='dropdown-content'>";
+                echo "<button id='doneBtn' value='" . $row['id'] . "'>Mark as done</button><br>";
+                echo "<button id='updateBtn'>Update</button> <br>";
+                echo "<form action='../src/deleteJob.php' method='post'>";
+                echo "<button name='delete' value='" .$row['id'] . " 'id='deleteBtn'>Delete</button>";
+                echo "</form>";
+            echo "</div>";
+    echo "</div>";
+
+
+    // echo "<form action='../src/deleteJob.php' method='post'>";
+    // echo "<button name='delete' value='" . $row['id'] . "'>Delete</button>";
+    // echo "</form>";
     echo "</div>";
     echo HR;
 }
 echo "</div>";
+?>

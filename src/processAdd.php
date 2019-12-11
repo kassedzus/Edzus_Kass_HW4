@@ -7,7 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $job = $_POST['jobName'];
     $category = $_POST['jobCategory']; //FIXME when no artist exists
     $due = $_POST['jobDue'];
-
+    if ($due == "") {
+        $due = date("d.m.Y");
+    }
     // prepare and bind
     $stmt = $conn->prepare("INSERT INTO jobs (job, category, due)
                             VALUES (:job, :category, :due)");
@@ -21,3 +23,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 } else {
     echo "That was not a POST, most likely GET";
 }
+?>
