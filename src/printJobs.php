@@ -3,7 +3,9 @@ require_once 'db.php';
 require_once "constants.php";
 
 //we prepare a statement and execute it
-$stmt = $conn->prepare("SELECT id, job, category, due FROM jobs ORDER BY due ASC");
+$stmt = $conn->prepare("SELECT job, category, due FROM jobs ORDER BY due ASC 
+                        WHERE (user_id = :user_id)");
+$stmt->bindParam(':user_id', $_SESSION['id']);
 $stmt->execute();
 
 // set the resulting array to associative
@@ -22,7 +24,7 @@ foreach ($allRows as $row) {
     if (!$columnsPrinted) {
         echo "<div class='row-column-names'>";
         foreach ($row as $key => $value) {
-            echo "<span class='column-name'> $key </span>";
+            echo "<th class='column-name'> $key </th>";
         }
         $columnsPrinted = true;
         echo "</div>";

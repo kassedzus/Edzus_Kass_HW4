@@ -1,5 +1,6 @@
 <?php
-    require_once "../src/templates/header.php";
+    session_start();
+    require_once "../src/templates/header2.php";
 
     echo "<div class='main-cont'>";
 

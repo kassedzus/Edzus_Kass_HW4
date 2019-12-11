@@ -5,17 +5,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //we need to add song to database
     $job = $_POST['jobName'];
-    $category = $_POST['jobCategory']; //FIXME when no artist exists
+    $category = $_POST['jobCategory'];
     $due = $_POST['jobDue'];
-    if ($due == "") {
-        $due = date("d.m.Y");
-    }
+    $user_id = $_SESSION['id'];
+
     // prepare and bind
-    $stmt = $conn->prepare("INSERT INTO jobs (job, category, due)
-                            VALUES (:job, :category, :due)");
+    $stmt = $conn->prepare("INSERT INTO jobs (job, category, due, user_id)
+                            VALUES (:job, :category, :due :user_id)");
     $stmt->bindParam(':job', $job);
     $stmt->bindParam(':category', $category);
     $stmt->bindParam(':due', $due);
+    $stmt->bindParam(':user_id', $user_id);
+
 
     $stmt->execute();
     //we go to our index.php or rather our root

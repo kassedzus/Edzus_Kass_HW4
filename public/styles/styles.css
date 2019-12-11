@@ -10,10 +10,19 @@ body {
 
 /* HEADER STYLING */
 
-header {
+.header {
     height: 70px;
     background-color: rgb(238, 48, 48);
     display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.header2 {
+    display: flex;
+    background-color: rgb(238, 48, 48);
+    height: 70px;
     justify-content: space-between;
     align-content: center;
     align-items: center;
@@ -28,6 +37,10 @@ header {
 }
 #app-logo:hover {
     background-image: url(../../images/shopping-list-blue.png);
+}
+.brand {
+    color: white;
+    text-shadow: 1px 1px 1px black;
 }
 .searcbar {
     display: flex;
@@ -66,9 +79,25 @@ header {
     background-position: center;
     height: 30px;
     width: 30px;
+    margin-right: 10px;
 }
 .new-job:hover {
     background-image: url(../../images/AddNewJob-blue.png);
+}
+.logoutBtn {
+    background-image: url(../../images/logout-white.png);
+    background-size: contain;
+    background-position: center;
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+}
+.logoutBtn:hover {
+    background-image: url(../../images/logout-blue.png);
+}
+.toolBtns {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* INDEX PAGE STYLING */

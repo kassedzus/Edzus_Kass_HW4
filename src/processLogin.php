@@ -22,15 +22,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // print_r($hash);
 
         if (password_verify($password, $hash)) {
-            echo "<br>Login Worked!";
             $_SESSION['username'] = $username;
             $_SESSION['id'] = (int) $allRows[0]['id'];
+            header('Location: ../public/addNewJob.php');
         } else {
             echo "<br>Login Failed";
         }
     }
 
-    header('Location: ../public/addNewJob.php');
+    // header('Location: ../public/addNewJob.php');
 
 }
 ?>
