@@ -14,6 +14,7 @@
             <p>Don't have an account? </p>
             <button id="regBut">Register here</button>
         </div>
+        <input type="checkbox" name="markDone" id="markBtn" >
     </div>
 
     <div class="register-form" id="regForm">

@@ -330,6 +330,12 @@ tbody {
     display: flex;
     justify-content: space-around;
 }
+th, td {
+    padding: 10px;
+}
+th, tr {
+    border-bottom: 1px solid black;
+}
 
 
 /* BUTTON EXPERIMENT */
