@@ -3,9 +3,9 @@ require_once 'db.php';
 require_once "constants.php";
 
 //we prepare a statement and execute it
-$stmt = $conn->prepare("SELECT job, category, due FROM jobs ORDER BY due ASC 
-                        WHERE (user_id = :user_id)");
-$stmt->bindParam(':user_id', $_SESSION['id']);
+$stmt = $conn->prepare("SELECT job, category, due FROM jobs  
+                        WHERE (user_id = :user_id) ORDER BY due ASC");
+$stmt->bindParam(':user_id', intval($_SESSION['id']));
 $stmt->execute();
 
 // set the resulting array to associative
@@ -22,19 +22,22 @@ echo "<div class='job-container'>";
 $columnsPrinted = false; //for column names
 foreach ($allRows as $row) {
     if (!$columnsPrinted) {
-        echo "<div class='row-column-names'>";
+        echo "<table class='row-column-names'>";
+        echo "<tr>";
         foreach ($row as $key => $value) {
-            echo "<th class='column-name'> $key </th>";
+            echo "<th class='table-head'> $key </th>";
         }
         $columnsPrinted = true;
-        echo "</div>";
-        echo HR;
+        // echo "</table>"; 
+        
     }
-    echo "<div class='row-job'>";
+    echo "</tr>";
+    echo "<tr>";
     foreach ($row as $key => $value) {
-        echo "<div class='value-cell'>$value </div>";
-
+        echo "<td class='value-cell'>$value ";
     }
+    
+    
     echo "<div class='dropdown'>";
         echo "<button class='dropbtn'><i class='fa fa-cog' aria-hidden='true'></i></button>";
             echo "<div class='dropdown-content'>";
@@ -45,13 +48,9 @@ foreach ($allRows as $row) {
                 echo "</form>";
             echo "</div>";
     echo "</div>";
-
-
-    // echo "<form action='../src/deleteJob.php' method='post'>";
-    // echo "<button name='delete' value='" . $row['id'] . "'>Delete</button>";
-    // echo "</form>";
-    echo "</div>";
-    echo HR;
+    echo "</td>";
+    echo "</tr>";
 }
+echo "</table>";
 echo "</div>";
 ?>

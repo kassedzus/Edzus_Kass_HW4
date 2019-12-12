@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $job_id = $_POST['delete'];
 
     // prepare and bind
-    $stmt = $conn->prepare("DELETE FROM `jobs` WHERE `id` = (:id)");
+    $stmt = $conn->prepare("DELETE FROM `jobs` WHERE `jobs`.`id` = (:id)");
     $stmt->bindParam(':id', $job_id);
 
     $stmt->execute();

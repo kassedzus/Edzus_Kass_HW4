@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once '../src/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -8,10 +9,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $category = $_POST['jobCategory'];
     $due = $_POST['jobDue'];
     $user_id = $_SESSION['id'];
-
+    
     // prepare and bind
     $stmt = $conn->prepare("INSERT INTO jobs (job, category, due, user_id)
-                            VALUES (:job, :category, :due :user_id)");
+                            VALUES (:job, :category, :due, :user_id)");
     $stmt->bindParam(':job', $job);
     $stmt->bindParam(':category', $category);
     $stmt->bindParam(':due', $due);
