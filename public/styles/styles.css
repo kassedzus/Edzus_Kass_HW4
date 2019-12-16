@@ -287,6 +287,8 @@ footer {
     transition: width 0.4s;
     position: absolute;
     font-size: 15px;
+
+
   }
   .cta:hover {
     width: 100px;
@@ -324,11 +326,22 @@ footer {
     width: 100%;
 }
 tbody {
-    width: 500px;
+    display: table;
+    width:100%;
+    border-spacing: 0;
+}
+.job-style-done{
+    background-color: rgb(148, 235, 148);
+}
+.job-style-past:not(.job-style-done){
+    background-color: rgba(243, 111, 111, 0.685);
 }
 .row-job {
     display: flex;
     justify-content: space-around;
+}
+th {
+    text-transform: capitalize;
 }
 th, td {
     padding: 10px;
@@ -336,13 +349,16 @@ th, td {
 th, tr {
     border-bottom: 1px solid black;
 }
+.filter {
+    color: black;
+    margin-right: 10px;
+}
 
 
 /* BUTTON EXPERIMENT */
 .dropbtn {
-  background-color: white;
+  background-color: transparent;
   color: rgb(192, 21, 21);
-  padding: 10px;
   font-size: 16px;
   width: 25px;
   height: 25px;
@@ -370,13 +386,38 @@ th, tr {
   right: -50px;
 }
 
-#doneBtn, #deleteBtn, #updateBtn {
+.value-cell{
+    text-align: center;
+}
+.value-cell .value {
+    display: inline-block;
+}
+
+.action-buttons{
+    display: none;
+    margin-left: 10px;
+}
+
+.action-buttons form{
+    display: inline-flex;
+}
+
+.action-buttons button{
+    display: inline-block;
+}
+
+.action-buttons .updateBtn{
+    float:left;
+    margin-right: 10px;
+}
+
+.doneBtn, .deleteBtn, .updateBtn, .cancelBtn {
     border: none;
     width: 100%;
     height: 30px;
     font-size: 14px;
 }
-#doneBtn:hover, #deleteBtn:hover, #updateBtn:hover {
+.doneBtn:hover, .deleteBtn:hover, .updateBtn:hover, .cancelBtn:hover {
     background-color: rgb(230, 118, 118);
     color: white;
 }

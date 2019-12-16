@@ -7,7 +7,7 @@
     <title>TO-DO APP</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="../public/scripts/main.js" defer></script>
+    <script src="../public/scripts/register.js" defer></script>
 </head>
 <body>
 <div id="page-container">
@@ -16,7 +16,7 @@
             <h3 class="brand">Checklist<sup>&copy;</sup></h3>
             <div class="searcbar" style="display:none">
                 <input type="text" name="seaarchbar" id="search-input" placeholder="Search..">
-                <button type="submit" class="searchButton" onclick="myFunction()"><i class="fa fa-search"></i></button>
+                <!-- <button type="submit" class="searchButton" onclick="myFunction()"><i class="fa fa-search"></i></button> -->
             </div>
             <div class="toolBtns" style="display:none">
             <a href="../public/addNewJob.php"><div class="new-job"></div></a>

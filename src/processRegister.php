@@ -10,9 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($_POST['regPassword'] != $_POST['regPassword2']) {
         echo "Password mismatch";
     }
-    // you could check if password matches certain format
     $hash = password_hash($_POST['regPassword'], PASSWORD_DEFAULT);
-    //TODO add real users
 
     // prepare and bind
     $stmt = $conn->prepare("INSERT INTO users (username, hash)

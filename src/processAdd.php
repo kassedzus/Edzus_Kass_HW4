@@ -18,10 +18,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bindParam(':due', $due);
     $stmt->bindParam(':user_id', $user_id);
 
+    //$array = array("job"=>$job, "category"=>$category, "due"=>$due, "user_id"=>$user_id);
+
+    //$arrayJSON = json_encode($array);
+    //var_dump($arrayJSON);
+
 
     $stmt->execute();
     //we go to our index.php or rather our root
-    header('Location: ../public/addNewJob.php');
+     header('Location: ../public/addNewJob.php');
 } else {
     echo "That was not a POST, most likely GET";
 }

@@ -12,10 +12,10 @@
 <body>
 <div id="page-container">
     <header class="header2">
-            <a href="../public/addNewJob.php"><div id="app-logo"></div></a>
+            <a href="../public/currentJob.php"><div id="app-logo"></div></a>
             <div class="searcbar">
                 <input type="text" name="seaarchbar" id="search-input" placeholder="Search..">
-                <button type="submit" class="searchButton" onclick="myFunction()"><i class="fa fa-search"></i></button>
+                <!-- <button type="submit" class="searchButton" id="searchBtn"><i class="fa fa-search"></i></button> -->
             </div>
             <div class="toolBtns">
             <a href="../public/addNewJob.php"><div class="new-job"></div></a>

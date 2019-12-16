@@ -3,37 +3,26 @@ require_once '../src/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    //we need to add song to database
-    // $song_id = $_POST['update'];
-    // $title = $_POST['title'];
-    // $artist = $_POST['artist'];
-    // $length = $_POST['length'];
-    //for check boxes we only get the value when checkbox is checked!
-    $isDone = $_POST['mark-done'];
+    $jobId = $_POST['mark-done'];
 
-    // PALIKU ŠEIT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    if($_POST['is-done'] == 1){
+        $markedDone = 0;
+    }elseif($_POST['is-done'] == 0){
+        $markedDone = 1;
+    }
 
-    // var_dump($_POST);
-    // die("with my favorite $isfavorite");
+    //$markedDone = ($_POST['is-done'] === 1)?0:1;
 
     // prepare and bind
-    // UPDATE `tracks` SET `title` = 'Rinķi', `artist` = 'Bermudu Divstūris', `length` = '189' WHERE `tracks`.`id` = 6
-    $stmt = $conn->prepare("UPDATE `tracks`
-        SET `title` = (:title),
-            `artist` = (:artist),
-            `length` = (:length),
-            `favorite` = (:favorite)
-        WHERE `tracks`.`id` = (:songid)");
+    $stmt = $conn->prepare("UPDATE `jobs`
+        SET `marked_done` = (:marked_done)
+        WHERE `id` = (:id)");
 
-    $stmt->bindParam(':songid', $song_id);
-    $stmt->bindParam(':title', $title);
-    $stmt->bindParam(':artist', $artist);
-    $stmt->bindParam(':length', $length);
-    $stmt->bindParam(':favorite', $isFavorite);
+    $stmt->bindParam(':marked_done', $markedDone);    
+    $stmt->bindParam(':id', $jobId);
 
     $stmt->execute();
-    //we go to our index.php or rather our root
-    header('Location: /');
+    header('Location: ../public/addNewJob.php');
 } else {
     echo "That was not a POST, most likely GET";
 }
